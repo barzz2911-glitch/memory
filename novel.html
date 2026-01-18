@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Novel Bucin - Surat Cinta yang Tersimpan. Cerita cinta yang indah dan penuh makna.">
+    <title>Novel Bucin - Surat Cinta yang Tersimpan</title>
+    <link rel="stylesheet" href="novel_bucin.css">
+    <!-- Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- Animasi Pembukaan (Preloader) -->
+<div class="opening-overlay" id="opening-overlay">
+    <div class="floating-hearts" id="floating-hearts"></div>
+    
+    <div class="opening-container">
+        <div class="heart-beat">💕</div>
+        
+        <div class="character-couple">
+            <!-- Karakter 1 -->
+            <div class="character character-1">
+                <div class="character-head">
+                    <div class="character-eye left"></div>
+                    <div class="character-eye right"></div>
+                    <div class="character-smile"></div>
+                </div>
+                <div class="character-body">
+                    <div class="character-arm"></div>
+                </div>
+                <div class="character-leg left"></div>
+                <div class="character-leg right"></div>
+            </div>
+            
+            <!-- Karakter 2 -->
+            <div class="character character-2">
+                <div class="character-head">
+                    <div class="character-eye left"></div>
+                    <div class="character-eye right"></div>
+                    <div class="character-smile"></div>
+                </div>
+                <div class="character-body">
+                    <div class="character-arm"></div>
+                </div>
+                <div class="character-leg left"></div>
+                <div class="character-leg right"></div>
+            </div>
+            
+            <!-- Hati di tengah -->
+            <div class="character-heart">❤️</div>
+        </div>
+        
+        <h1 class="opening-title">Novel Bucin</h1>
+        <p class="opening-subtitle">Surat Cinta yang Tersimpan</p>
+        
+        <div class="loading-bar">
+            <div class="loading-progress" id="loading-progress"></div>
+        </div>
+        
+        <p class="loading-text" id="loading-text">Menyiapkan cerita cinta...</p>
+    </div>
+    
+    <button class="skip-button" id="skip-button">Lewati Animasi</button>
+</div>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-brand" role="banner">
+            <i class="fas fa-heart" aria-hidden="true"></i>
+            <span>Novel Bucin</span>
+        </div>
+        <div class="nav-controls">
+            <button id="toggle-theme" class="nav-btn" aria-label="Toggle dark mode" title="Ubah tema">
+                <i class="fas fa-moon" aria-hidden="true"></i>
+                <span>Mode Malam</span>
+            </button>
+            <button id="zoom-in" class="nav-btn" aria-label="Zoom in text" title="Perbesar teks">
+                <i class="fas fa-search-plus" aria-hidden="true"></i>
+            </button>
+            <button id="zoom-out" class="nav-btn" aria-label="Zoom out text" title="Perkecil teks">
+                <i class="fas fa-search-minus" aria-hidden="true"></i>
+            </button>
+            <button id="toggle-menu" class="nav-btn menu-btn" aria-label="Toggle menu" title="Toggle menu">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="hero-section" role="banner">
+        <h1>💕 Selamat Datang di Cerita Kita 💕</h1>
+        <p>Tempat di mana kata-kata cinta menjadi kisah</p>
+    </div>
+
+    <div class="novel-container">
+        <aside id="chapter-list" class="chapter-list" role="complementary" aria-label="Daftar bab">
+            <div class="chapter-header">
+                <h2><i class="fas fa-book-open" aria-hidden="true"></i> Daftar Bab</h2>
+            </div>
+            <!-- Chapters will be inserted here by JavaScript -->
+        </aside>
+        
+        <main class="content" role="main">
+            <div class="content-header">
+                <h1 id="chapter-title" aria-live="polite">Memuat...</h1>
+                <div class="reading-controls" role="navigation" aria-label="Chapter navigation">
+                    <button id="prev-chapter" class="chapter-nav" aria-label="Bab sebelumnya">
+                        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                        <span>Sebelumnya</span>
+                    </button>
+                    <button id="next-chapter" class="chapter-nav" aria-label="Bab selanjutnya">
+                        <span>Selanjutnya</span>
+                        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="content-area" class="content-area">
+                <!-- Featured image akan muncul di sini -->
+                <div class="featured-image" aria-hidden="true">
+                    <img src="" alt="Chapter cover image" loading="lazy">
+                </div>
+                <!-- Konten cerita akan muncul di sini -->
+                <div class="chapter-content" aria-live="polite"></div>
+            </div>
+        </main>
+    </div>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <i class="fas fa-heart" aria-hidden="true"></i>
+                <p>&copy; 2025 Novel Bucin. Semua hak dilindungi.</p>
+            </div>
+            <div class="social-links" role="list">
+                <a href="#" aria-label="Instagram" role="listitem" title="Instagram">
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="#" aria-label="Twitter" role="listitem" title="Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+                <a href="#" aria-label="Facebook" role="listitem" title="Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="novel_bucin.js"></script>
+</body>
+</html>
